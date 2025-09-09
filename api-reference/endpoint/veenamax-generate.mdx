@@ -1,0 +1,332 @@
+---
+title: 'Generate Speech'
+api: 'POST https://api.mayaresearch.ai/generate'
+description: 'Convert text to natural-sounding speech with emotional intelligence'
+---
+
+<Note>
+  This endpoint generates high-quality speech audio from text input with ultra-low latency and support for Hindi, English, and Hinglish.
+</Note>
+
+## Authentication
+
+<ParamField header="Authorization" type="string" required>
+  Bearer token for authentication
+  ```
+  Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1
+  ```
+</ParamField>
+
+## Request Body
+
+<ParamField body="text" type="string" required>
+  The text to convert to speech. Supports:
+  - English: "Hello, how are you?"
+  - Hindi (Devanagari): "आप कैसे हैं?"
+  - Hindi (Roman): "Aap kaise hain?"
+  - Hinglish: "Meeting 3 baje hai, please time pe aana"
+</ParamField>
+
+<ParamField body="speaker_id" type="string" required>
+  Voice identifier to use for speech generation
+  
+  **Female Voices:**
+  - `charu_soft` - Gentle storyteller
+  - `keerti_joy` - Energetic presenter
+  - `mohini_whispers` - ASMR specialist
+  - `maitri_connect` - Professional narrator
+  - `soumya_calm` - Relaxation expert
+  - `vinaya_assist` - Virtual assistant
+  
+  **Male Voices:**
+  - `varun_chat` - Authoritative speaker
+  - `agastya_impact` - Motivational coach
+</ParamField>
+
+<ParamField body="streaming" type="boolean" default="false">
+  Enable streaming audio generation for real-time applications
+  - `true` - Stream audio chunks as they're generated
+  - `false` - Return complete audio file after processing
+</ParamField>
+
+<ParamField body="normalize" type="boolean" default="true">
+  Enable intelligent text normalization for numbers, abbreviations, and special characters
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl --location 'https://api.mayaresearch.ai/generate' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1' \
+--data '{
+  "text": "Welcome to VeenaMAX, the most advanced text-to-speech API for Indian languages.",
+  "speaker_id": "vinaya_assist",
+  "streaming": false,
+  "normalize": true
+}'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.mayaresearch.ai/generate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1'
+  },
+  body: JSON.stringify({
+    text: "Welcome to VeenaMAX, the most advanced text-to-speech API for Indian languages.",
+    speaker_id: "vinaya_assist",
+    streaming: false,
+    normalize: true
+  })
+});
+
+const audioData = await response.blob();
+// Play or save the audio data
+```
+
+```python Python
+import requests
+
+url = "https://api.mayaresearch.ai/generate"
+headers = {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1"
+}
+payload = {
+    "text": "Welcome to VeenaMAX, the most advanced text-to-speech API for Indian languages.",
+    "speaker_id": "vinaya_assist",
+    "streaming": False,
+    "normalize": True
+}
+
+response = requests.post(url, json=payload, headers=headers)
+
+if response.status_code == 200:
+    # Save the audio file
+    with open("output.wav", "wb") as f:
+        f.write(response.content)
+```
+
+```php PHP
+<?php
+$url = 'https://api.mayaresearch.ai/generate';
+$data = array(
+    'text' => 'Welcome to VeenaMAX, the most advanced text-to-speech API for Indian languages.',
+    'speaker_id' => 'vinaya_assist',
+    'streaming' => false,
+    'normalize' => true
+);
+
+$options = array(
+    'http' => array(
+        'header'  => array(
+            'Content-Type: application/json',
+            'Authorization: Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1'
+        ),
+        'method'  => 'POST',
+        'content' => json_encode($data)
+    )
+);
+
+$context  = stream_context_create($options);
+$result = file_get_contents($url, false, $context);
+
+if ($result !== FALSE) {
+    file_put_contents('output.wav', $result);
+}
+?>
+```
+
+```java Java
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class VeenaMAXExample {
+    public static void main(String[] args) throws IOException {
+        URL url = new URL("https://api.mayaresearch.ai/generate");
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestMethod("POST");
+        con.setRequestProperty("Content-Type", "application/json");
+        con.setRequestProperty("Authorization", "Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1");
+        con.setDoOutput(true);
+        
+        String jsonInputString = "{" +
+            "\"text\": \"Welcome to VeenaMAX, the most advanced text-to-speech API for Indian languages.\"," +
+            "\"speaker_id\": \"vinaya_assist\"," +
+            "\"streaming\": false," +
+            "\"normalize\": true" +
+        "}";
+        
+        try(OutputStream os = con.getOutputStream()) {
+            byte[] input = jsonInputString.getBytes("utf-8");
+            os.write(input, 0, input.length);           
+        }
+        
+        // Read and save the audio response
+        try(InputStream is = con.getInputStream();
+            FileOutputStream fos = new FileOutputStream("output.wav")) {
+            byte[] buffer = new byte[4096];
+            int bytesRead;
+            while ((bytesRead = is.read(buffer)) != -1) {
+                fos.write(buffer, 0, bytesRead);
+            }
+        }
+    }
+}
+```
+
+</RequestExample>
+
+## Response
+
+<ResponseField name="audio" type="binary">
+  The generated audio file in WAV or MP3 format (configurable)
+  
+  **Audio Specifications:**
+  - Sample Rate: 22,050 Hz
+  - Bit Depth: 16-bit
+  - Format: WAV/MP3
+  - Quality: Studio-quality, noise-free
+</ResponseField>
+
+<ResponseExample>
+
+```json Success Response (Headers)
+{
+  "Content-Type": "audio/wav",
+  "Content-Length": "882044",
+  "X-Request-Id": "req_abc123xyz",
+  "X-Processing-Time": "342ms"
+}
+```
+
+```json Error Response
+{
+  "error": {
+    "code": "invalid_request",
+    "message": "Missing required parameter: speaker_id",
+    "type": "validation_error"
+  }
+}
+```
+
+</ResponseExample>
+
+## Example Use Cases
+
+<Tabs>
+  <Tab title="English">
+    ```json
+    {
+      "text": "Your account balance is 50,000 rupees. Would you like to make a transaction?",
+      "speaker_id": "vinaya_assist",
+      "streaming": false,
+      "normalize": true
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Hindi (Devanagari)">
+    ```json
+    {
+      "text": "आपके खाते में पचास हजार रुपये हैं। क्या आप लेनदेन करना चाहेंगे?",
+      "speaker_id": "charu_soft",
+      "streaming": false,
+      "normalize": true
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Hinglish">
+    ```json
+    {
+      "text": "Aapka balance hai 50,000 rupees. Transaction karna chahenge?",
+      "speaker_id": "varun_chat",
+      "streaming": false,
+      "normalize": true
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Code-Mixed">
+    ```json
+    {
+      "text": "Sir, aapka loan approve ho gaya hai for 5 lakhs. Documents tomorrow tak submit kar dijiye please.",
+      "speaker_id": "agastya_impact",
+      "streaming": false,
+      "normalize": true
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Error Codes
+
+<Warning>
+  Always implement proper error handling and retry logic with exponential backoff for rate limits.
+</Warning>
+
+| Code | Description | Resolution |
+|------|-------------|------------|
+| 400 | Invalid request format | Check JSON syntax and ensure all required fields are present |
+| 401 | Authentication failed | Verify your API key is correct and properly formatted |
+| 403 | Access denied | Check API permissions and usage quotas |
+| 429 | Rate limit exceeded | Implement exponential backoff and retry after the specified time |
+| 500 | Internal server error | Contact support if the error persists |
+
+## Rate Limits
+
+<Info>
+  **Default Rate Limits:**
+  - 100 requests per minute
+  - 1000 requests per hour
+  - 10,000 requests per day
+  
+  Contact support for higher limits.
+</Info>
+
+## Streaming Response
+
+When `streaming` is set to `true`, the API returns audio chunks as they are generated:
+
+```javascript
+const response = await fetch('https://api.mayaresearch.ai/generate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1'
+  },
+  body: JSON.stringify({
+    text: "Long text for streaming...",
+    speaker_id: "vinaya_assist",
+    streaming: true,
+    normalize: true
+  })
+});
+
+const reader = response.body.getReader();
+const audioChunks = [];
+
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) break;
+  audioChunks.push(value);
+  
+  // Process or play audio chunk immediately
+  processAudioChunk(value);
+}
+
+// Combine all chunks for complete audio
+const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
+```
+
+<Tip>
+  Use streaming mode for:
+  - Real-time voice assistants
+  - Live customer support
+  - Interactive voice applications
+  - Long-form content where you want to start playback immediately
+</Tip>

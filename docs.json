@@ -8,6 +8,7 @@
     "dark": "#15803D"
   },
   "favicon": "/favicon.svg",
+  "openapi": "api-reference/openapi.yaml",
   "navigation": {
     "tabs": [
       {
@@ -53,7 +54,14 @@
           {
             "group": "API documentation",
             "pages": [
-              "api-reference/introduction"
+              "api-reference/introduction",
+              "veenamax-tts-api"
+            ]
+          },
+          {
+            "group": "VeenaMAX API",
+            "pages": [
+              "api-reference/endpoint/veenamax-generate"
             ]
           },
           {
