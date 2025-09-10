@@ -181,7 +181,7 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-      description: Use the API key provided - vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1
+      description: Use your API key in Bearer format - Bearer YOUR_API_KEY_HERE
   schemas:
     Error:
       type: object

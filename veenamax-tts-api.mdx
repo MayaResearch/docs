@@ -36,7 +36,7 @@ VeenaMAX is a high-performance, advanced Text-to-Speech API that converts text i
   <Step title="Get your API Key">
     Your API key for authentication:
     ```
-    vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1
+    YOUR_API_KEY_HERE
     ```
   </Step>
   <Step title="Set the Base URL">
@@ -59,7 +59,7 @@ VeenaMAX is a high-performance, advanced Text-to-Speech API that converts text i
 </Note>
 
 ```
-Authorization: Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1
+Authorization: Bearer YOUR_API_KEY_HERE
 ```
 
 ### Generate Speech
@@ -101,7 +101,7 @@ Generates high-quality speech audio from the provided text input with ultra-low 
 ```bash cURL
 curl --location 'https://api.mayaresearch.ai/generate' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1' \
+--header 'Authorization: Bearer YOUR_API_KEY_HERE' \
 --data '{
   "text": "If you don'\''t stop and look around once in a while, you could miss it.",
   "speaker_id": "varun_chat",
@@ -115,7 +115,7 @@ const response = await fetch('https://api.mayaresearch.ai/generate', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1'
+    'Authorization': 'Bearer YOUR_API_KEY_HERE'
   },
   body: JSON.stringify({
     text: "If you don't stop and look around once in a while, you could miss it.",
@@ -132,7 +132,7 @@ import requests
 url = "https://api.mayaresearch.ai/generate"
 headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer vna_master_D_z9rDcMb1b9woKT0Z4AH9xukkFUYgiQ4da2G2FyNF1"
+    "Authorization": "Bearer YOUR_API_KEY_HERE"
 }
 data = {
     "text": "If you don't stop and look around once in a while, you could miss it.",
