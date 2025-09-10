@@ -1,44 +1,99 @@
-# Mintlify Starter Kit
+# Maya Research API Documentation
 
-Use the starter kit to get your docs deployed and ready to customize.
+This repository contains the documentation for Maya Research APIs, built with [Mintlify](https://mintlify.com).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+## 📚 Documentation Structure
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- **VeenaMAX TTS API** - Advanced Text-to-Speech API for Indian languages
+- **API Reference** - Interactive API playground and endpoints
+- **Getting Started** - Quick start guides and tutorials
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## 🚀 Local Development
 
-## Development
+### Prerequisites
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
+- Node.js 18+ installed
+- npm or yarn package manager
 
-```
-npm i -g mint
-```
+### Installation
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
-mint dev
+1. Install Mintlify CLI globally:
+```bash
+npm install -g mintlify
 ```
 
-View your local preview at `http://localhost:3000`.
+2. Navigate to the docs directory:
+```bash
+cd /Users/sthipp005/Documents/personal/mayaresearch/docs
+```
 
-## Publishing changes
+3. Start the development server:
+```bash
+mintlify dev
+```
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+The documentation will be available at `http://localhost:3000`
 
-## Need help?
+## 📝 Making Changes
 
-### Troubleshooting
+1. Edit `.mdx` files for content changes
+2. Update `docs.json` for navigation and configuration
+3. Modify `openapi.yaml` for API specification updates
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+## 🌐 Deployment
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
-- [Mintlify community](https://mintlify.com/community)
+### Deploy to Mintlify hosting:
+```bash
+mintlify deploy
+```
+
+### Build for self-hosting:
+```bash
+mintlify build
+```
+
+## 📁 Project Structure
+
+```
+docs/
+├── index.mdx                           # Home page
+├── veenamax-tts-api.mdx               # VeenaMAX overview
+├── api-reference/
+│   ├── endpoint/
+│   │   └── veenamax-generate.mdx      # API endpoint documentation
+│   └── openapi.yaml                   # OpenAPI specification
+├── docs.json                          # Mintlify configuration
+└── README.md                          # This file
+```
+
+## 🔗 Important Links
+
+- **Production API**: https://api.mayaresearch.ai
+- **Dashboard**: https://dashboard.mayaresearch.ai
+- **Support**: support@mayaresearch.ai
+- **Status Page**: https://status.mayaresearch.ai
+
+## 🎨 Customization
+
+- **Colors**: Purple theme (#7C3AED primary)
+- **Logo**: Place your logo files in `/logo/` directory
+- **Favicon**: Update `/favicon.svg`
+
+## 📊 Analytics
+
+Update the GTM tag ID in `docs.json`:
+```json
+"analytics": {
+  "gtm": {
+    "tagId": "GTM-YOUR-ID"
+  }
+}
+```
+
+## 🤝 Support
+
+For any questions or issues, contact: support@mayaresearch.ai
+
+---
+
+Built with ❤️ by Maya Research

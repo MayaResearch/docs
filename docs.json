@@ -1,76 +1,47 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Maya Research",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#7C3AED",
+    "light": "#9333EA",
+    "dark": "#6D28D9"
   },
   "favicon": "/favicon.svg",
   "openapi": "api-reference/openapi.yaml",
+  "metadata": {
+    "og:title": "Maya Research API Documentation",
+    "og:description": "Build powerful applications with Maya Research's advanced AI APIs for Indian languages",
+    "og:image": "https://mayaresearch.ai/og-image.png",
+    "twitter:card": "summary_large_image",
+    "twitter:site": "@mayaresearch"
+  },
+  "analytics": {
+    "gtm": {
+      "tagId": "GTM-XXXXXX"
+    }
+  },
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
   "navigation": {
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Getting Started",
             "pages": [
               "index",
-              "quickstart",
-              "development"
-            ]
-          },
-          {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "AI tools",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API reference",
-        "groups": [
-          {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction",
               "veenamax-tts-api"
             ]
           },
           {
-            "group": "VeenaMAX API",
+            "group": "API Reference",
             "pages": [
               "api-reference/endpoint/veenamax-generate"
-            ]
-          },
-          {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
             ]
           }
         ]
@@ -79,19 +50,14 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "API Status",
+          "href": "https://status.mayaresearch.ai",
+          "icon": "signal"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Support",
+          "href": "mailto:support@mayaresearch.ai",
+          "icon": "headset"
         }
       ]
     }
@@ -104,13 +70,17 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@mayaresearch.ai"
+      },
+      {
+        "label": "API Keys",
+        "href": "https://dashboard.mayaresearch.ai"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Get Started",
+      "href": "https://mayaresearch.ai/signup"
     }
   },
   "contextual": {
@@ -127,9 +97,9 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/mayaresearch",
+      "github": "https://github.com/mayaresearch",
+      "linkedin": "https://linkedin.com/company/maya-research"
     }
   }
 }
