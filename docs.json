@@ -83,6 +83,14 @@
       "href": "https://mayaresearch.ai/signup"
     }
   },
+  "api": {
+    "mdx": {
+      "auth": {
+        "method": "bearer",
+        "name": "Authorization"
+      }
+    }
+  },
   "contextual": {
     "options": [
      "copy",
