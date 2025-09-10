@@ -68,10 +68,10 @@ docs/
 
 ## 🔗 Important Links
 
-- **Production API**: https://api.mayaresearch.ai
-- **Dashboard**: https://dashboard.mayaresearch.ai
-- **Support**: support@mayaresearch.ai
-- **Status Page**: https://status.mayaresearch.ai
+- **Website**: https://mayaresearch.ai
+- **API**: https://api.mayaresearch.ai
+- **Support**: https://mayaresearch.ai
+- **Documentation**: https://mayaresearch.ai
 
 ## 🎨 Customization
 

@@ -3,14 +3,14 @@ info:
   title: Maya Research - VeenaMAX TTS API
   description: Advanced Text-to-Speech API with emotional intelligence for Indian languages. Convert text to natural-sounding speech in Hindi, English, and Hinglish with ultra-low latency.
   version: 1.0.0
-  termsOfService: https://mayaresearch.ai/terms
+  termsOfService: https://mayaresearch.ai
   contact:
     name: Maya Research Support
     email: support@mayaresearch.ai
-    url: https://mayaresearch.ai/support
+    url: https://mayaresearch.ai
   license:
     name: Proprietary
-    url: https://mayaresearch.ai/license
+    url: https://mayaresearch.ai
 servers:
   - url: https://api.mayaresearch.ai
     description: Production server
