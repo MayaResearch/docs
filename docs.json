@@ -65,7 +65,7 @@
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://mayaresearch.ai"
+      "href": "https://mayaresearch.ai/studio"
     }
   },
   "api": {
