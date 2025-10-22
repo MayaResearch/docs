@@ -1,23 +1,23 @@
 ---
 title: 'Voice Design API'
-description: 'Generate speech with pre-designed character voices featuring natural emotional intelligence'
+description: 'Generate speech with pre-designed voice voices featuring natural emotional intelligence'
 icon: 'waveform-lines'
 sidebarTitle: 'Voice Design Overview'
 'og:title': 'Voice Design API - Maya Research'
-'og:description': 'Generate speech with pre-designed character voices and emotional intelligence'
+'og:description': 'Generate speech with pre-designed voice voices and emotional intelligence'
 ---
 
 <Info>
-  Voice Design API enables you to generate emotionally intelligent speech using pre-designed voice characters. Perfect for creating consistent brand voices, characters for games, or personalized voice experiences.
+  Voice Design API enables you to generate emotionally intelligent speech using pre-designed voice voices. Perfect for creating consistent brand voices, voices for games, or personalized voice experiences.
 </Info>
 
 ## Overview
 
-The Voice Design API provides powerful tools to generate high-quality AI speech using curated voice characters. Each character has distinct vocal characteristics optimized for specific use cases. With built-in emotional intelligence and expressive capabilities, you can create engaging content for any application.
+The Voice Design API provides powerful tools to generate high-quality AI speech using curated voice voices. Each voice has distinct vocal voiceistics optimized for specific use cases. With built-in emotional intelligence and expressive capabilities, you can create engaging content for any application.
 
 <CardGroup cols={2}>
   <Card title="Character Library" icon="users">
-    Access a curated library of pre-designed voice characters with distinct personalities
+    Access a curated library of pre-designed voice voices with distinct personalities
   </Card>
   <Card title="Emotional Intelligence" icon="heart">
     Built-in support for emotional tags and natural expression variations
@@ -46,7 +46,7 @@ The Voice Design API provides powerful tools to generate high-quality AI speech 
     ```
   </Step>
   <Step title="Browse Characters and Generate">
-    Retrieve available characters and generate speech with your chosen character
+    Retrieve available voices and generate speech with your chosen voice
   </Step>
 </Steps>
 
@@ -65,11 +65,11 @@ X-API-Key: maya_YOUR_API_KEY_HERE
 ### Endpoints
 
 <CardGroup cols={2}>
-  <Card title="Get Characters" icon="list" href="/api-reference/endpoint/voice-design-characters">
-    Retrieve the list of available pre-designed voice characters
+  <Card title="Get Characters" icon="list" href="/api-reference/endpoint/voice-design-voices">
+    Retrieve the list of available pre-designed voice voices
   </Card>
   <Card title="Generate Speech" icon="microphone" href="/api-reference/endpoint/voice-design-generate">
-    Generate speech using pre-designed character voices
+    Generate speech using pre-designed voice voices
   </Card>
 </CardGroup>
 
@@ -77,11 +77,11 @@ X-API-Key: maya_YOUR_API_KEY_HERE
 
 ### Character-Based Generation
 
-Use pre-designed characters from our curated library for consistent, high-quality voices:
+Use pre-designed voices from our curated library for consistent, high-quality voices:
 
 ```json
 {
-  "character_id": "mfbo7r",
+  "voice_id": "Ava",
   "text": "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.",
   "stream": false
 }
@@ -92,7 +92,7 @@ Use pre-designed characters from our curated library for consistent, high-qualit
 </Note>
 
 **Benefits:**
-- **Consistent Quality**: Same voice characteristics every time
+- **Consistent Quality**: Same voice voiceistics every time
 - **Optimized Performance**: Faster generation and processing
 - **Domain-Specific**: Characters designed for specific use cases
 - **Predictable Output**: Reliable, professional results
@@ -105,7 +105,7 @@ The Voice Design API supports rich emotional expression through inline tags with
 
 ```json With Emotional Tags
 {
-  "character_id": "mu4o6g",
+  "voice_id": "Emma",
   "text": "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all.",
   "stream": false
 }
@@ -113,7 +113,7 @@ The Voice Design API supports rich emotional expression through inline tags with
 
 ```json Simple Generation
 {
-  "character_id": "mfbo7r",
+  "voice_id": "Ava",
   "text": "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic that I know you're going to love.",
   "stream": false
 }
@@ -194,10 +194,10 @@ The Voice Design API supports rich emotional expression through inline tags with
     Create consistent host and guest voices for podcast content with natural conversational flow
   </Card>
   <Card title="Audiobook Narration" icon="book-open-reader">
-    Generate character voices for audiobooks with distinct personalities and emotional range
+    Generate voice voices for audiobooks with distinct personalities and emotional range
   </Card>
   <Card title="Gaming Characters" icon="gamepad">
-    Design unique voices for game characters with appropriate age, personality, and emotional expression
+    Design unique voices for game voices with appropriate age, personality, and emotional expression
   </Card>
   <Card title="Brand Voice" icon="building">
     Create a consistent brand voice across all customer touchpoints
@@ -238,7 +238,7 @@ Enable `verbose: true` to receive additional metadata with your audio generation
   "metadata": {
     "duration": 5.2,
     "sample_rate": 22050,
-    "character_used": "custom_generated",
+    "voice_used": "custom_generated",
     "processing_time": 0.8,
     "text_length": 156,
     "emotional_tags_detected": ["excited", "curious", "giggle"]
@@ -254,10 +254,10 @@ Enable `verbose: true` to receive additional metadata with your audio generation
 
 <AccordionGroup>
   <Accordion title="Choosing the Right Character">
-    - Browse all available characters using the Get Characters endpoint
-    - Select characters that match your content domain (podcast, customer service, etc.)
+    - Browse all available voices using the Get Characters endpoint
+    - Select voices that match your content domain (podcast, customer service, etc.)
     - Consider the accent and age range appropriate for your target audience
-    - Test different characters to find the best fit for your brand
+    - Test different voices to find the best fit for your brand
   </Accordion>
   
   <Accordion title="Using Emotional Tags">
@@ -268,17 +268,17 @@ Enable `verbose: true` to receive additional metadata with your audio generation
   </Accordion>
   
   <Accordion title="Optimizing for Performance">
-    - Cache character IDs for consistent, repeated content
+    - Cache voice IDs for consistent, repeated content
     - Enable streaming for interactive applications
-    - Break very long text into manageable chunks (under 1,000 characters)
-    - Reuse the same character for consistent brand voice
+    - Break very long text into manageable chunks (under 1,000 voices)
+    - Reuse the same voice for consistent brand voice
   </Accordion>
   
   <Accordion title="Quality Assurance">
-    - Test characters with sample text before production use
+    - Test voices with sample text before production use
     - Preview sample audio from the Get Characters endpoint
     - Use verbose mode during development for insights
-    - Save successful character IDs for reuse across your application
+    - Save successful voice IDs for reuse across your application
   </Accordion>
 </AccordionGroup>
 
@@ -293,7 +293,7 @@ Enable `verbose: true` to receive additional metadata with your audio generation
 | **400** | Invalid request format | Check JSON syntax and ensure all required fields are present |
 | **401** | Authentication failed | Verify your API key is correct and properly formatted |
 | **403** | Access denied | Check API permissions and usage quotas |
-| **404** | Character not found | Verify the character_id exists using the Get Characters endpoint |
+| **404** | Character not found | Verify the voice_id exists using the Get Characters endpoint |
 | **429** | Rate limit exceeded | Implement exponential backoff and retry logic |
 | **500** | Internal server error | Contact support if the error persists |
 
@@ -309,6 +309,6 @@ Enable `verbose: true` to receive additional metadata with your audio generation
 </Info>
 
 <Tip>
-  **Pro tip:** Select the right character once and reuse it across your application for consistent brand voice and optimal performance.
+  **Pro tip:** Select the right voice once and reuse it across your application for consistent brand voice and optimal performance.
 </Tip>
 

@@ -180,7 +180,7 @@ paths:
   /v1/characters:
     get:
       summary: Get Characters
-      description: Retrieve the list of available pre-designed voice characters
+      description: Retrieve the list of available pre-designed voices
       operationId: getCharacters
       tags:
         - Voice Design
@@ -190,26 +190,26 @@ paths:
         - apiKeyAuth: []
       responses:
         '200':
-          description: Successfully retrieved characters
+          description: Successfully retrieved voices
           content:
             application/json:
               schema:
                 type: object
                 properties:
-                  characters:
+                  voices:
                     type: array
                     items:
                       type: object
                       properties:
-                        character_id:
+                        voice_id:
                           type: string
-                          example: "mfbo7r"
+                          example: "Ava"
                         name:
                           type: string
-                          example: "British 20s female"
+                          example: "American 20s female"
                         description:
                           type: string
-                          example: "Realistic female voice in the 20s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                          example: "Realistic female voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
                         gender:
                           type: string
                           enum: [male, female, neutral]
@@ -227,10 +227,10 @@ paths:
                         sample_url:
                           type: string
                           format: uri
-                          example: "https://samples.mayaresearch.ai/characters/mfbo7r.wav"
+                          example: "https://samples.mayaresearch.ai/voices/Ava.wav"
                   total_count:
                     type: integer
-                    example: 7
+                    example: 8
         '401':
           description: Authentication failed
           content:
@@ -267,29 +267,31 @@ paths:
             schema:
               type: object
               required:
-                - character_id
+                - voice_id
                 - text
               properties:
-                character_id:
+                voice_id:
                   type: string
-                  description: The unique identifier of a pre-designed character
+                  description: The unique identifier of a pre-designed voice
                   enum:
-                    - mfbo7r
-                    - mzakoa
-                    - m01ksa
-                    - mxq9oh
-                    - mu4o6g
-                    - mx2zt5
-                    - mxuv0j
-                  example: "mfbo7r"
+                    - Ava
+                    - Chloe
+                    - Liam
+                    - Noah
+                    - James
+                    - Emma
+                    - Sophie
+                    - Oliver
+                  example: "Ava"
                   x-enum-descriptions:
-                    mfbo7r: "British 20s female - Realistic female voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    mzakoa: "British 20s male - Realistic male voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    m01ksa: "American 20s male - Realistic male voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    mxq9oh: "American 40s male - Realistic male voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    mu4o6g: "American 40s female - Realistic female voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    mx2zt5: "British 40s female - Realistic female voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    mxuv0j: "British 40s male - Realistic male voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Ava: "American 20s female - Realistic female voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Chloe: "British 20s female - Realistic female voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Liam: "British 20s male - Realistic male voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Noah: "American 20s male - Realistic male voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    James: "American 40s male - Realistic male voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Emma: "American 40s female - Realistic female voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Sophie: "British 40s female - Realistic female voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Oliver: "British 40s male - Realistic male voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
                 text:
                   type: string
                   description: The text to convert to speech. Supports emotional tags.
@@ -304,19 +306,19 @@ paths:
               simple:
                 summary: Simple generation
                 value:
-                  character_id: "mfbo7r"
+                  voice_id: "Ava"
                   text: "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love."
                   stream: false
               with_emotions:
                 summary: With emotional tags
                 value:
-                  character_id: "mu4o6g"
+                  voice_id: "Emma"
                   text: "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all."
                   stream: false
               streaming:
                 summary: Streaming mode
                 value:
-                  character_id: "m01ksa"
+                  voice_id: "Noah"
                   text: "Welcome back to another episode! Today we have something really special planned. Let's dive right in and explore this amazing topic together."
                   stream: true
       responses:
@@ -342,10 +344,10 @@ paths:
               schema:
                 type: string
               description: Time taken to process the request
-            X-Character-ID:
+            X-Voice-ID:
               schema:
                 type: string
-              description: Character ID used for generation
+              description: Voice ID used for generation
         '400':
           description: Invalid request format
           content:
@@ -355,7 +357,7 @@ paths:
               example:
                 error:
                   code: invalid_request
-                  message: "Missing required parameter: character_id"
+                  message: "Missing required parameter: voice_id"
                   type: validation_error
         '401':
           description: Authentication failed
@@ -376,8 +378,8 @@ paths:
                 $ref: '#/components/schemas/Error'
               example:
                 error:
-                  code: character_not_found
-                  message: "Character ID not found"
+                  code: voice_not_found
+                  message: "Voice ID not found"
                   type: validation_error
         '413':
           description: Text too long

@@ -17,17 +17,18 @@ sidebarTitle: 'Generate Speech'
 
 ## Request Body
 
-<ParamField body="character_id" type="string" required default="mfbo7r">
-  The unique identifier of a pre-designed character from the Get Characters endpoint
+<ParamField body="voice_id" type="string" required default="Ava">
+  The unique identifier of a pre-designed voice from the Get Characters endpoint
   
-  **Available Characters:**
-  - `mfbo7r` - British 20s female
-  - `mzakoa` - British 20s male
-  - `m01ksa` - American 20s male
-  - `mxq9oh` - American 40s male
-  - `mu4o6g` - American 40s female
-  - `mx2zt5` - British 40s female
-  - `mxuv0j` - British 40s male
+  **Available Voices:**
+  - `Ava` - American 20s female
+  - `Chloe` - British 20s female
+  - `Liam` - British 20s male
+  - `Noah` - American 20s male
+  - `James` - American 40s male
+  - `Emma` - American 40s female
+  - `Sophie` - British 40s female
+  - `Oliver` - British 40s male
 </ParamField>
 
 <ParamField body="text" type="string" required default="Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love. We've got some incredible insights to share with you, so let's get started right away.">
@@ -83,7 +84,7 @@ curl --location 'https://v3.mayaresearch.ai/v1/tts/generate' \
 --header 'Content-Type: application/json' \
 --header 'X-API-Key: maya_YOUR_API_KEY_HERE' \
 --data '{
-  "character_id": "mfbo7r",
+  "voice_id": "Ava",
   "text": "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.",
   "stream": false
 }'
@@ -97,7 +98,7 @@ const response = await fetch('https://v3.mayaresearch.ai/v1/tts/generate', {
     'X-API-Key': 'maya_YOUR_API_KEY_HERE'
   },
   body: JSON.stringify({
-    character_id: "mfbo7r",
+    voice_id: "Ava",
     text: "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.",
     stream: false
   })
@@ -116,7 +117,7 @@ headers = {
     "X-API-Key": "maya_YOUR_API_KEY_HERE"
 }
 payload = {
-    "character_id": "mfbo7r",
+    "voice_id": "Ava",
     "text": "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.",
     "stream": False
 }
@@ -133,7 +134,7 @@ if response.status_code == 200:
 <?php
 $url = 'https://v3.mayaresearch.ai/v1/tts/generate';
 $data = array(
-    'character_id' => 'mfbo7r',
+    'voice_id' => 'Ava',
     'text' => 'Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.',
     'stream' => false
 );
@@ -173,7 +174,7 @@ public class VoiceDesignExample {
         con.setDoOutput(true);
         
         String jsonInputString = "{" +
-            "\"character_id\": \"mfbo7r\"," +
+            "\"voice_id\": \"Ava\"," +
             "\"text\": \"Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.\"," +
             "\"stream\": false" +
         "}";
@@ -280,7 +281,7 @@ public class VoiceDesignExample {
 {
   "error": {
     "code": "missing_parameters",
-    "message": "Either 'character_id' or 'description' must be provided",
+    "message": "Missing required parameter: voice_id",
     "type": "validation_error"
   }
 }
@@ -291,71 +292,81 @@ public class VoiceDesignExample {
 ## Example Use Cases
 
 <Tabs>
-  <Tab title="British 20s Female">
+  <Tab title="Ava - American 20s Female">
     ```json
     {
-      "character_id": "mfbo7r",
+      "voice_id": "Ava",
       "text": "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love.",
       "stream": false
     }
     ```
   </Tab>
   
-  <Tab title="American 40s Female">
+  <Tab title="Emma - American 40s Female">
     ```json
     {
-      "character_id": "mu4o6g",
+      "voice_id": "Emma",
       "text": "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all.",
       "stream": false
     }
     ```
   </Tab>
   
-  <Tab title="American 20s Male">
+  <Tab title="Noah - American 20s Male">
     ```json
     {
-      "character_id": "m01ksa",
+      "voice_id": "Noah",
       "text": "Welcome back to another episode! Today we have something really special planned. <curious> Have you ever wondered how AI voices actually work? Let's dive right in and explore this amazing topic together.",
       "stream": true
     }
     ```
   </Tab>
   
-  <Tab title="British 20s Male">
+  <Tab title="Liam - British 20s Male">
     ```json
     {
-      "character_id": "mzakoa",
+      "voice_id": "Liam",
       "text": "Hello and welcome to today's show. We have an incredible lineup for you today that you absolutely won't want to miss.",
       "stream": false
     }
     ```
   </Tab>
   
-  <Tab title="American 40s Male">
+  <Tab title="James - American 40s Male">
     ```json
     {
-      "character_id": "mxq9oh",
+      "voice_id": "James",
       "text": "Thank you for tuning in to another episode. Today's conversation is going to be particularly interesting as we explore some cutting-edge developments in the field.",
       "stream": false
     }
     ```
   </Tab>
   
-  <Tab title="British 40s Female">
+  <Tab title="Chloe - British 20s Female">
     ```json
     {
-      "character_id": "mx2zt5",
+      "voice_id": "Chloe",
       "text": "Good evening and welcome back. I'm absolutely delighted to have you with us today as we delve into this fascinating subject matter.",
       "stream": false
     }
     ```
   </Tab>
   
-  <Tab title="British 40s Male">
+  <Tab title="Sophie - British 40s Female">
     ```json
     {
-      "character_id": "mxuv0j",
+      "voice_id": "Sophie",
       "text": "Greetings everyone, and welcome to today's discussion. We have quite an extraordinary topic lined up that I'm confident you'll find thoroughly engaging.",
+      "stream": false
+    }
+    ```
+  </Tab>
+  
+  <Tab title="Oliver - British 40s Male">
+    ```json
+    {
+      "voice_id": "Oliver",
+      "text": "Welcome to this special episode where we explore some truly remarkable insights and perspectives on the subject at hand.",
       "stream": false
     }
     ```
@@ -374,7 +385,7 @@ const response = await fetch('https://v3.mayaresearch.ai/v1/tts/generate', {
     'X-API-Key': 'maya_YOUR_API_KEY_HERE'
   },
   body: JSON.stringify({
-    character_id: "mfbo7r",
+    voice_id: "Ava",
     text: "Welcome back to another episode of our podcast! Today we're diving into some truly fascinating content that I know you're going to absolutely love.",
     stream: true
   })
@@ -442,7 +453,7 @@ const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
 | 400 | Invalid request format | Check JSON syntax and ensure required fields are present |
 | 401 | Authentication failed | Verify your API key is correct and properly formatted |
 | 403 | Access denied | Check API permissions and usage quotas |
-| 404 | Character not found | Verify the character_id exists using Get Characters endpoint |
+| 404 | Voice not found | Verify the voice_id exists using Get Characters endpoint |
 | 413 | Text too long | Reduce text length to under 5,000 characters |
 | 429 | Rate limit exceeded | Implement exponential backoff and retry after specified time |
 | 500 | Internal server error | Contact support if the error persists |
@@ -476,6 +487,6 @@ const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
 </CardGroup>
 
 <Tip>
-  **Pro tip:** For consistent brand voice across your application, select the right character once, test thoroughly, then reuse the same character_id for all subsequent generations.
+  **Pro tip:** For consistent brand voice across your application, select the right voice once, test thoroughly, then reuse the same voice_id for all subsequent generations.
 </Tip>
 
