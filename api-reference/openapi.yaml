@@ -194,43 +194,19 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  voices:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        voice_id:
-                          type: string
-                          example: "Ava"
-                        name:
-                          type: string
-                          example: "American 20s female"
-                        description:
-                          type: string
-                          example: "Realistic female voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                        gender:
-                          type: string
-                          enum: [male, female, neutral]
-                        age_range:
-                          type: string
-                          example: "20s"
-                        accent:
-                          type: string
-                          example: "american"
-                        use_cases:
-                          type: array
-                          items:
-                            type: string
-                          example: ["podcast", "podcast_host", "casual"]
-                        sample_url:
-                          type: string
-                          format: uri
-                          example: "https://samples.mayaresearch.ai/voices/Ava.wav"
-                  total_count:
-                    type: integer
-                    example: 8
+                type: array
+                items:
+                  type: object
+                  properties:
+                    voice_id:
+                      type: string
+                      example: "Ava"
+                    name:
+                      type: string
+                      example: "American 20s female"
+                    description:
+                      type: string
+                      example: "Realistic female voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
         '401':
           description: Authentication failed
           content:

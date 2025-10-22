@@ -17,42 +17,18 @@ sidebarTitle: 'Get Characters'
 
 ## Response
 
-<ResponseField name="characters" type="array">
-  Array of character objects containing voice information
-  
-  <Expandable title="Character Object">
-    <ResponseField name="voice_id" type="string">
-      Unique identifier for the character (e.g., "m4a7b2")
-    </ResponseField>
-    
-    <ResponseField name="name" type="string">
-      Display name of the character
-    </ResponseField>
-    
-    <ResponseField name="description" type="string">
-      Detailed description of the voice characteristics
-    </ResponseField>
-    
-    <ResponseField name="gender" type="string">
-      Voice gender: "male", "female", or "neutral"
-    </ResponseField>
-    
-    <ResponseField name="age_range" type="string">
-      Approximate age range (e.g., "20s", "30s", "40s")
-    </ResponseField>
-    
-    <ResponseField name="accent" type="string">
-      Voice accent (e.g., "american", "british", "indian")
-    </ResponseField>
-    
-    <ResponseField name="use_cases" type="array">
-      Recommended use cases for this character (e.g., ["podcast", "customer_service"])
-    </ResponseField>
-    
-    <ResponseField name="sample_url" type="string">
-      URL to a sample audio file demonstrating this character's voice
-    </ResponseField>
-  </Expandable>
+Returns an array of voice objects.
+
+<ResponseField name="voice_id" type="string">
+  Unique identifier for the voice (e.g., "Ava", "Emma", "Noah")
+</ResponseField>
+
+<ResponseField name="name" type="string">
+  Display name of the voice (e.g., "American 20s female")
+</ResponseField>
+
+<ResponseField name="description" type="string">
+  Detailed description of the voice characteristics
 </ResponseField>
 
 <RequestExample>
@@ -70,8 +46,8 @@ const response = await fetch('https://v3.mayaresearch.ai/v1/characters', {
   }
 });
 
-const characters = await response.json();
-console.log(characters);
+const voices = await response.json();
+console.log(voices);
 ```
 
 ```python Python
@@ -85,8 +61,8 @@ headers = {
 response = requests.get(url, headers=headers)
 
 if response.status_code == 200:
-    characters = response.json()
-    print(characters)
+    voices = response.json()
+    print(voices)
 ```
 
 ```php PHP
@@ -104,8 +80,8 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($ch);
 curl_close($ch);
 
-$characters = json_decode($response, true);
-print_r($characters);
+$voices = json_decode($response, true);
+print_r($voices);
 ?>
 ```
 
@@ -169,51 +145,48 @@ func main() {
 <ResponseExample>
 
 ```json Success Response
-{
-  "characters": [
-    {
-      "voice_id": "m4a7b2",
-      "name": "Alex - Professional Host",
-      "description": "Warm, professional male voice in early 30s with American accent. Perfect for podcasts, presentations, and professional content.",
-      "gender": "male",
-      "age_range": "30s",
-      "accent": "american",
-      "use_cases": ["podcast", "presentation", "narration", "professional"],
-      "sample_url": "https://samples.mayaresearch.ai/characters/m4a7b2.wav"
-    },
-    {
-      "voice_id": "f2k9x1",
-      "name": "Sarah - Friendly Assistant",
-      "description": "Friendly, approachable female voice in mid-20s with neutral accent. Ideal for customer service, assistance, and conversational content.",
-      "gender": "female",
-      "age_range": "20s",
-      "accent": "neutral",
-      "use_cases": ["customer_service", "assistant", "conversational", "support"],
-      "sample_url": "https://samples.mayaresearch.ai/characters/f2k9x1.wav"
-    },
-    {
-      "voice_id": "m8t5p3",
-      "name": "David - Authoritative Narrator",
-      "description": "Deep, authoritative male voice in 40s with British accent. Excellent for documentaries, audiobooks, and professional narration.",
-      "gender": "male",
-      "age_range": "40s",
-      "accent": "british",
-      "use_cases": ["audiobook", "documentary", "narration", "formal"],
-      "sample_url": "https://samples.mayaresearch.ai/characters/m8t5p3.wav"
-    },
-    {
-      "voice_id": "f6n2w8",
-      "name": "Maya - Energetic Presenter",
-      "description": "Energetic, enthusiastic female voice in 20s with American accent. Great for entertainment, education, and engaging content.",
-      "gender": "female",
-      "age_range": "20s",
-      "accent": "american",
-      "use_cases": ["entertainment", "education", "marketing", "energetic"],
-      "sample_url": "https://samples.mayaresearch.ai/characters/f6n2w8.wav"
-    }
-  ],
-  "total_count": 4
-}
+[
+  {
+    "voice_id": "Ava",
+    "name": "American 20s female",
+    "description": "Realistic female voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Chloe",
+    "name": "British 20s female",
+    "description": "Realistic female voice in the 20s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Liam",
+    "name": "British 20s male",
+    "description": "Realistic male voice in the 20s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Noah",
+    "name": "American 20s male",
+    "description": "Realistic male voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "James",
+    "name": "American 40s male",
+    "description": "Realistic male voice in the 40s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Emma",
+    "name": "American 40s female",
+    "description": "Realistic female voice in the 40s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Sophie",
+    "name": "British 40s female",
+    "description": "Realistic female voice in the 40s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  },
+  {
+    "voice_id": "Oliver",
+    "name": "British 40s male",
+    "description": "Realistic male voice in the 40s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+  }
+]
 ```
 
 ```json Error Response
@@ -322,39 +295,19 @@ response = requests.post(url, json=payload, headers=headers)
 You can filter and sort characters in your application based on the response data:
 
 ```javascript JavaScript Example
-// Filter by gender
-const maleCharacters = characters.filter(c => c.gender === 'male');
-
-// Filter by use case
-const podcastCharacters = characters.filter(c => 
-  c.use_cases.includes('podcast')
-);
+// Filter by gender (extract from name)
+const femaleVoices = voices.filter(v => v.name.includes('female'));
 
 // Filter by accent
-const americanCharacters = characters.filter(c => 
-  c.accent === 'american'
-);
+const americanVoices = voices.filter(v => v.name.includes('American'));
 
-// Sort by age range
-const sortedByAge = characters.sort((a, b) => 
-  a.age_range.localeCompare(b.age_range)
-);
+// Filter by age
+const twentiesVoices = voices.filter(v => v.name.includes('20s'));
+
+// Get voice by ID
+const avaVoice = voices.find(v => v.voice_id === 'Ava');
 ```
 
-## Sample Audio Preview
-
-Each character includes a `sample_url` that you can use to preview the voice before using it in your application:
-
-```html HTML Audio Player
-<audio controls>
-  <source src="{character.sample_url}" type="audio/wav">
-  Your browser does not support the audio element.
-</audio>
-```
-
-<Tip>
-  Preview sample audio for each character to find the perfect voice for your application before generating content.
-</Tip>
 
 ## Rate Limits
 
