@@ -203,19 +203,19 @@ paths:
                       properties:
                         character_id:
                           type: string
-                          example: "m4a7b2"
+                          example: "mfbo7r"
                         name:
                           type: string
-                          example: "Alex - Professional Host"
+                          example: "British 20s female"
                         description:
                           type: string
-                          example: "Warm, professional male voice in early 30s with American accent"
+                          example: "Realistic female voice in the 20s age with a british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
                         gender:
                           type: string
                           enum: [male, female, neutral]
                         age_range:
                           type: string
-                          example: "30s"
+                          example: "20s"
                         accent:
                           type: string
                           example: "american"
@@ -223,14 +223,14 @@ paths:
                           type: array
                           items:
                             type: string
-                          example: ["podcast", "presentation", "narration"]
+                          example: ["podcast", "podcast_host", "casual"]
                         sample_url:
                           type: string
                           format: uri
-                          example: "https://samples.mayaresearch.ai/characters/m4a7b2.wav"
+                          example: "https://samples.mayaresearch.ai/characters/mfbo7r.wav"
                   total_count:
                     type: integer
-                    example: 4
+                    example: 7
         '401':
           description: Authentication failed
           content:
@@ -273,11 +273,27 @@ paths:
                 character_id:
                   type: string
                   description: The unique identifier of a pre-designed character
-                  example: "m4a7b2"
+                  enum:
+                    - mfbo7r
+                    - mzakoa
+                    - m01ksa
+                    - mxq9oh
+                    - mu4o6g
+                    - mx2zt5
+                    - mxuv0j
+                  example: "mfbo7r"
+                  x-enum-descriptions:
+                    mfbo7r: "British 20s female - Realistic female voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    mzakoa: "British 20s male - Realistic male voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    m01ksa: "American 20s male - Realistic male voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    mxq9oh: "American 40s male - Realistic male voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    mu4o6g: "American 40s female - Realistic female voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    mx2zt5: "British 40s female - Realistic female voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    mxuv0j: "British 40s male - Realistic male voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
                 text:
                   type: string
                   description: The text to convert to speech. Supports emotional tags.
-                  example: "Hello! Welcome to our podcast."
+                  example: "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love. We've got some incredible insights to share with you, so let's get started right away."
                   maxLength: 5000
                 stream:
                   type: boolean
@@ -288,20 +304,20 @@ paths:
               simple:
                 summary: Simple generation
                 value:
-                  character_id: "m4a7b2"
-                  text: "Hello! Welcome to our podcast."
+                  character_id: "mfbo7r"
+                  text: "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love."
                   stream: false
               with_emotions:
                 summary: With emotional tags
                 value:
-                  character_id: "f2k9x1"
-                  text: "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible."
+                  character_id: "mu4o6g"
+                  text: "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all."
                   stream: false
               streaming:
                 summary: Streaming mode
                 value:
-                  character_id: "m4a7b2"
-                  text: "Welcome back to another episode!"
+                  character_id: "m01ksa"
+                  text: "Welcome back to another episode! Today we have something really special planned. Let's dive right in and explore this amazing topic together."
                   stream: true
       responses:
         '200':
