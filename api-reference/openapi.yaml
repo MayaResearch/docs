@@ -13,7 +13,9 @@ info:
     url: https://mayaresearch.ai
 servers:
   - url: https://api.mayaresearch.ai
-    description: Production server
+    description: VeenaMAX TTS API Production server
+  - url: https://v3.mayaresearch.ai
+    description: Voice Design API Production server
 security:
   - bearerAuth: []
 paths:
@@ -175,6 +177,225 @@ paths:
                   code: internal_error
                   message: "An unexpected error occurred"
                   type: server_error
+  /v1/characters:
+    get:
+      summary: Get Characters
+      description: Retrieve the list of available pre-designed voice characters
+      operationId: getCharacters
+      tags:
+        - Voice Design
+      servers:
+        - url: https://v3.mayaresearch.ai
+      security:
+        - apiKeyAuth: []
+      responses:
+        '200':
+          description: Successfully retrieved characters
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  characters:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        character_id:
+                          type: string
+                          example: "m4a7b2"
+                        name:
+                          type: string
+                          example: "Alex - Professional Host"
+                        description:
+                          type: string
+                          example: "Warm, professional male voice in early 30s with American accent"
+                        gender:
+                          type: string
+                          enum: [male, female, neutral]
+                        age_range:
+                          type: string
+                          example: "30s"
+                        accent:
+                          type: string
+                          example: "american"
+                        use_cases:
+                          type: array
+                          items:
+                            type: string
+                          example: ["podcast", "presentation", "narration"]
+                        sample_url:
+                          type: string
+                          format: uri
+                          example: "https://samples.mayaresearch.ai/characters/m4a7b2.wav"
+                  total_count:
+                    type: integer
+                    example: 4
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+  /v1/tts/generate:
+    post:
+      summary: Generate Speech with Voice Design
+      description: Generate speech using pre-designed character voices with emotional intelligence
+      operationId: generateVoiceDesignSpeech
+      tags:
+        - Voice Design
+      servers:
+        - url: https://v3.mayaresearch.ai
+      security:
+        - apiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - character_id
+                - text
+              properties:
+                character_id:
+                  type: string
+                  description: The unique identifier of a pre-designed character
+                  example: "m4a7b2"
+                text:
+                  type: string
+                  description: The text to convert to speech. Supports emotional tags.
+                  example: "Hello! Welcome to our podcast."
+                  maxLength: 5000
+                stream:
+                  type: boolean
+                  description: Enable streaming audio generation
+                  default: false
+                  example: false
+            examples:
+              simple:
+                summary: Simple generation
+                value:
+                  character_id: "m4a7b2"
+                  text: "Hello! Welcome to our podcast."
+                  stream: false
+              with_emotions:
+                summary: With emotional tags
+                value:
+                  character_id: "f2k9x1"
+                  text: "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible."
+                  stream: false
+              streaming:
+                summary: Streaming mode
+                value:
+                  character_id: "m4a7b2"
+                  text: "Welcome back to another episode!"
+                  stream: true
+      responses:
+        '200':
+          description: Successfully generated audio
+          content:
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+                description: Generated audio file in WAV format
+            audio/mp3:
+              schema:
+                type: string
+                format: binary
+                description: Generated audio file in MP3 format
+          headers:
+            X-Request-Id:
+              schema:
+                type: string
+              description: Unique request identifier
+            X-Processing-Time:
+              schema:
+                type: string
+              description: Time taken to process the request
+            X-Character-ID:
+              schema:
+                type: string
+              description: Character ID used for generation
+        '400':
+          description: Invalid request format
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: invalid_request
+                  message: "Missing required parameter: character_id"
+                  type: validation_error
+        '401':
+          description: Authentication failed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: authentication_failed
+                  message: "Invalid API key"
+                  type: auth_error
+        '404':
+          description: Character not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: character_not_found
+                  message: "Character ID not found"
+                  type: validation_error
+        '413':
+          description: Text too long
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: text_too_long
+                  message: "Text exceeds 5,000 characters"
+                  type: validation_error
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: rate_limit_exceeded
+                  message: "Too many requests"
+                  type: rate_limit_error
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+              example:
+                error:
+                  code: internal_error
+                  message: "An unexpected error occurred"
+                  type: server_error
 components:
   securitySchemes:
     bearerAuth:
@@ -182,6 +403,11 @@ components:
       scheme: bearer
       bearerFormat: JWT
       description: Use your API key in Bearer format - Bearer YOUR_API_KEY_HERE
+    apiKeyAuth:
+      type: apiKey
+      in: header
+      name: X-API-Key
+      description: API key for Voice Design API authentication
   schemas:
     Error:
       type: object
@@ -204,4 +430,6 @@ components:
             - type
 tags:
   - name: Text-to-Speech
-    description: Endpoints for converting text to speech
+    description: VeenaMAX endpoints for converting text to speech
+  - name: Voice Design
+    description: Voice Design API endpoints for character-based speech generation

@@ -35,13 +35,21 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "veenamax-tts-api"
+              "veenamax-tts-api",
+              "voice-design-api"
             ]
           },
           {
-            "group": "API Reference",
+            "group": "VeenaMAX API Reference",
             "pages": [
               "api-reference/endpoint/veenamax-generate"
+            ]
+          },
+          {
+            "group": "Voice Design API Reference",
+            "pages": [
+              "api-reference/endpoint/voice-design-characters",
+              "api-reference/endpoint/voice-design-generate"
             ]
           }
         ]
@@ -66,14 +74,6 @@
       "type": "button",
       "label": "Get Started",
       "href": "https://mayaresearch.ai/studio"
-    }
-  },
-  "api": {
-    "mdx": {
-      "auth": {
-        "method": "bearer",
-        "name": "Authorization"
-      }
     }
   },
   "contextual": {
