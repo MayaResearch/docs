@@ -43,7 +43,7 @@ paths:
                       example: "Ava"
                     name:
                       type: string
-                      example: "American 20s female"
+                      example: "Ava"
                     description:
                       type: string
                       example: "Realistic female voice in the 20s age with a american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
@@ -105,25 +105,25 @@ paths:
                     - Demon
                   example: "Ava"
                   x-enum-descriptions:
-                    Ava: "American 20s female - Realistic female voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Chloe: "British 20s female - Realistic female voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Liam: "British 20s male - Realistic male voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Noah: "American 20s male - Realistic male voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    James: "American 40s male - Realistic male voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Emma: "American 40s female - Realistic female voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Sophie: "British 40s female - Realistic female voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    Oliver: "British 40s male - Realistic male voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
-                    AnimatedCartoon: "Animated Cartoon - Creative, animated_cartoon character. Female voice in their 20s with a american accent. High pitch, warm timbre, brisk pacing, energetic tone at high intensity."
-                    Anime: "Anime - Creative, anime character. Female voice in their 20s with a american accent. High pitch, warm timbre, brisk pacing, energetic tone at high intensity."
-                    Flirty: "Flirty - Creative, flirty character. Female voice in their 20s with a american accent. High pitch, warm timbre, slow pacing, excited tone at med intensity."
-                    Seductively: "Seductively - Creative, seductively character. Female voice in their 20s with a american accent. Low pitch, smooth timbre, very_slow pacing, neutral tone at low intensity."
-                    AIMachineVoice: "AI Machine Voice - Creative, ai_machine_voice character. Female voice in their 20s with a american accent. Normal pitch, robotic timbre, conversational pacing, neutral tone at med intensity."
-                    Cyborg: "Cyborg - Creative, cyborg character. Female voice in their 20s with a american accent. Normal pitch, robotic timbre, conversational pacing, neutral tone at med intensity."
-                    AlienSciFi: "Alien SciFi - Creative, alien_scifi character. Female voice in their 20s with a american accent. High pitch, ethereal timbre, fast pacing, neutral tone at med intensity."
-                    Pirate: "Pirate - Creative, pirate character. Male voice in their 30s with a american accent. Low pitch, gravelly timbre, conversational pacing, energetic tone at med intensity."
-                    Gangster: "Gangster - Creative, gangster character. Male voice in their 30s with a american accent. Low pitch, gravelly timbre, conversational pacing, neutral tone at med intensity."
-                    DarkVillain: "Dark Villain - Creative, dark_villain character. Male voice in their 30s with a american accent. Low pitch, harsh timbre, slow pacing, sarcastic tone at high intensity."
-                    Demon: "Demon - Creative, demon character. Male voice in their 40s with a american accent. Low pitch, harsh timbre, slow pacing, neutral tone at high intensity."
+                    Ava: "Realistic female voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Chloe: "Realistic female voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Liam: "Realistic male voice in the 20s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Noah: "Realistic male voice in the 20s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    James: "Realistic male voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Emma: "Realistic female voice in the 40s age with american accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Sophie: "Realistic female voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    Oliver: "Realistic male voice in the 40s age with british accent. Normal pitch, warm timbre, conversational pacing, energetic tone delivery at medium intensity, podcast Domain, podcast_host role, casual delivery"
+                    AnimatedCartoon: "Creative, animated_cartoon character. Female voice in their 20s with a american accent. High pitch, warm timbre, brisk pacing, energetic tone at high intensity."
+                    Anime: "Creative, anime character. Female voice in their 20s with a american accent. High pitch, warm timbre, brisk pacing, energetic tone at high intensity."
+                    Flirty: "Creative, flirty character. Female voice in their 20s with a american accent. High pitch, warm timbre, slow pacing, excited tone at med intensity."
+                    Seductively: "Creative, seductively character. Female voice in their 20s with a american accent. Low pitch, smooth timbre, very_slow pacing, neutral tone at low intensity."
+                    AIMachineVoice: "Creative, ai_machine_voice character. Female voice in their 20s with a american accent. Normal pitch, robotic timbre, conversational pacing, neutral tone at med intensity."
+                    Cyborg: "Creative, cyborg character. Female voice in their 20s with a american accent. Normal pitch, robotic timbre, conversational pacing, neutral tone at med intensity."
+                    AlienSciFi: "Creative, alien_scifi character. Female voice in their 20s with a american accent. High pitch, ethereal timbre, fast pacing, neutral tone at med intensity."
+                    Pirate: "Creative, pirate character. Male voice in their 30s with a american accent. Low pitch, gravelly timbre, conversational pacing, energetic tone at med intensity."
+                    Gangster: "Creative, gangster character. Male voice in their 30s with a american accent. Low pitch, gravelly timbre, conversational pacing, neutral tone at med intensity."
+                    DarkVillain: "Creative, dark_villain character. Male voice in their 30s with a american accent. Low pitch, harsh timbre, slow pacing, sarcastic tone at high intensity."
+                    Demon: "Creative, demon character. Male voice in their 40s with a american accent. Low pitch, harsh timbre, slow pacing, neutral tone at high intensity."
                 text:
                   type: string
                   description: The text to convert to speech.
