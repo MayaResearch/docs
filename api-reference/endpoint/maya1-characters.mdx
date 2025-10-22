@@ -290,25 +290,6 @@ response = requests.post(url, json=payload, headers=headers)
   </Accordion>
 </AccordionGroup>
 
-## Filtering and Sorting
-
-You can filter and sort characters in your application based on the response data:
-
-```javascript JavaScript Example
-// Filter by gender (extract from name)
-const femaleVoices = voices.filter(v => v.name.includes('female'));
-
-// Filter by accent
-const americanVoices = voices.filter(v => v.name.includes('American'));
-
-// Filter by age
-const twentiesVoices = voices.filter(v => v.name.includes('20s'));
-
-// Get voice by ID
-const avaVoice = voices.find(v => v.voice_id === 'Ava');
-```
-
-
 ## Error Codes
 
 | Code | Description | Resolution |
