@@ -46,7 +46,7 @@ sidebarTitle: 'Generate Speech'
 </ParamField>
 
 <ParamField body="text" type="string" required default="Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love. We've got some incredible insights to share with you, so let's get started right away.">
-  The text to convert to speech. Supports emotional tags like `<excited>`, `<curious>`, `<gasp>`, etc.
+  The text to convert to speech.
   
   **Max Length:** 5,000 characters
 </ParamField>
@@ -56,40 +56,6 @@ sidebarTitle: 'Generate Speech'
   - `true` - Stream audio chunks as they're generated (lower latency)
   - `false` - Return complete audio file after processing
 </ParamField>
-
-## Emotional Tags
-
-Enhance expressiveness by including emotional tags in your text:
-
-<CardGroup cols={3}>
-  <Card title="excited" icon="star">
-    `<excited>text</excited>`
-  </Card>
-  <Card title="curious" icon="magnifying-glass">
-    `<curious>text</curious>`
-  </Card>
-  <Card title="gasp" icon="face-surprise">
-    `<gasp>text</gasp>`
-  </Card>
-  <Card title="giggle" icon="face-smile">
-    `<giggle>text</giggle>`
-  </Card>
-  <Card title="sigh" icon="cloud">
-    `<sigh>text</sigh>`
-  </Card>
-  <Card title="whisper" icon="volume-low">
-    `<whisper>text</whisper>`
-  </Card>
-  <Card title="shout" icon="volume-high">
-    `<shout>text</shout>`
-  </Card>
-  <Card title="happy" icon="face-grin">
-    `<happy>text</happy>`
-  </Card>
-  <Card title="sad" icon="face-frown">
-    `<sad>text</sad>`
-  </Card>
-</CardGroup>
 
 <RequestExample>
 
@@ -218,11 +184,7 @@ public class VoiceDesignExample {
 <ResponseField name="audio" type="binary">
   The generated audio file in WAV or MP3 format
   
-  **Audio Specifications:**
-  - Sample Rate: 22,050 Hz or 24,000 Hz
-  - Bit Depth: 16-bit
-  - Format: WAV/MP3
-  - Quality: Studio-quality, noise-free
+ 
 </ResponseField>
 
 <ResponseField name="metadata" type="object" condition="verbose=true">
@@ -280,7 +242,7 @@ Audio file will be returned in WAV or MP3 format
     ```json
     {
       "voice_id": "Emma",
-      "text": "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all.",
+      "text": "Oh my gosh, you won't believe what happened today! It was absolutely incredible. This is exactly the kind of story I love to share with you all.",
       "stream": false
     }
     ```
@@ -290,7 +252,7 @@ Audio file will be returned in WAV or MP3 format
     ```json
     {
       "voice_id": "Noah",
-      "text": "Welcome back to another episode! Today we have something really special planned. <curious> Have you ever wondered how AI voices actually work? Let's dive right in and explore this amazing topic together.",
+      "text": "Welcome back to another episode! Today we have something really special planned. Have you ever wondered how AI voices actually work? Let's dive right in and explore this amazing topic together.",
       "stream": true
     }
     ```
@@ -394,12 +356,6 @@ const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
 <AccordionGroup>
   <Accordion title="Choose the Right Character" icon="user-check">
     Browse available characters using the Get Characters endpoint and select one that matches your use case and target audience.
-  </Accordion>
-  
-  <Accordion title="Use Emotional Tags Effectively" icon="face-smile">
-    - Place tags just before the text they should affect
-    - Don't overuse - natural speech has variation
-    - Test different tags to find what works best
   </Accordion>
   
   <Accordion title="Match Voice to Content" icon="arrows-turn-to-dots">

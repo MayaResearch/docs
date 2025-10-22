@@ -126,7 +126,7 @@ paths:
                     Demon: "Demon - Creative, demon character. Male voice in their 40s with a american accent. Low pitch, harsh timbre, slow pacing, neutral tone at high intensity."
                 text:
                   type: string
-                  description: The text to convert to speech. Supports emotional tags.
+                  description: The text to convert to speech.
                   example: "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love. We've got some incredible insights to share with you, so let's get started right away."
                   maxLength: 5000
                 stream:
@@ -140,12 +140,6 @@ paths:
                 value:
                   voice_id: "Ava"
                   text: "Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love."
-                  stream: false
-              with_emotions:
-                summary: With emotional tags
-                value:
-                  voice_id: "Emma"
-                  text: "<excited> Oh my gosh, you won't believe what happened today! <giggle> It was absolutely incredible. <happy> This is exactly the kind of story I love to share with you all."
                   stream: false
               streaming:
                 summary: Streaming mode
