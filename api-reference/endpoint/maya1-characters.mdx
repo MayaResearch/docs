@@ -309,23 +309,12 @@ const avaVoice = voices.find(v => v.voice_id === 'Ava');
 ```
 
 
-## Rate Limits
-
-<Info>
-  **Rate Limits for Character Listing:**
-  - 100 requests per minute
-  - This endpoint is optimized for caching
-  
-  Consider caching the character list in your application as it updates infrequently.
-</Info>
-
 ## Error Codes
 
 | Code | Description | Resolution |
 |------|-------------|------------|
 | 401 | Authentication failed | Verify your API key is correct |
 | 403 | Access denied | Check API permissions |
-| 429 | Rate limit exceeded | Implement caching and retry logic |
 | 500 | Internal server error | Contact support if persistent |
 
 <Warning>

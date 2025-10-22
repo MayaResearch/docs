@@ -53,12 +53,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Error'
-        '429':
-          description: Rate limit exceeded
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
         '500':
           description: Internal server error
           content:
@@ -230,17 +224,6 @@ paths:
                   code: text_too_long
                   message: "Text exceeds 5,000 characters"
                   type: validation_error
-        '429':
-          description: Rate limit exceeded
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Error'
-              example:
-                error:
-                  code: rate_limit_exceeded
-                  message: "Too many requests"
-                  type: rate_limit_error
         '500':
           description: Internal server error
           content:

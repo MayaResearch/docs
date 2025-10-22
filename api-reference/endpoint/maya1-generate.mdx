@@ -257,48 +257,8 @@ public class VoiceDesignExample {
 
 <ResponseExample>
 
-```json Success Response (Headers)
-{
-  "Content-Type": "audio/wav",
-  "Content-Length": "1245678",
-  "X-Request-Id": "req_xyz789abc",
-  "X-Processing-Time": "1.2s",
-  "X-Character-ID": "m4a7b2"
-}
-```
-
-```json Verbose Response (with metadata)
-{
-  "audio": "<binary_audio_data>",
-  "metadata": {
-    "duration": 5.2,
-    "sample_rate": 22050,
-    "character_used": "m4a7b2",
-    "processing_time": 1.2,
-    "text_length": 35,
-    "emotional_tags_detected": []
-  }
-}
-```
-
-```json Error Response - Invalid Character
-{
-  "error": {
-    "code": "invalid_character",
-    "message": "Character ID 'invalid_id' not found",
-    "type": "validation_error"
-  }
-}
-```
-
-```json Error Response - Missing Parameters
-{
-  "error": {
-    "code": "missing_parameters",
-    "message": "Missing required parameter: voice_id",
-    "type": "validation_error"
-  }
-}
+```text Success Response
+Audio file will be returned in WAV or MP3 format
 ```
 
 </ResponseExample>
@@ -459,7 +419,7 @@ const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
 ## Error Codes
 
 <Warning>
-  Always implement proper error handling and retry logic with exponential backoff for rate limits.
+  Always implement proper error handling to gracefully manage API errors.
 </Warning>
 
 | Code | Description | Resolution |
@@ -469,19 +429,7 @@ const completeAudio = new Blob(audioChunks, { type: 'audio/wav' });
 | 403 | Access denied | Check API permissions and usage quotas |
 | 404 | Voice not found | Verify the voice_id exists using Get Characters endpoint |
 | 413 | Text too long | Reduce text length to under 5,000 characters |
-| 429 | Rate limit exceeded | Implement exponential backoff and retry after specified time |
 | 500 | Internal server error | Contact support if the error persists |
-
-## Rate Limits
-
-<Info>
-  **Default Rate Limits:**
-  - 50 requests per minute
-  - 500 requests per hour
-  - 5,000 requests per day
-  
-  Contact support for higher limits or enterprise plans.
-</Info>
 
 ## Performance Tips
 
