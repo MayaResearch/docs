@@ -1,9 +1,9 @@
 ---
-title: 'Generate Speech with Voice Design'
+title: 'Generate Speech with Maya1'
 openapi: 'POST /v1/tts/generate'
 description: 'Generate speech using pre-designed character voices'
 sidebarTitle: 'Generate Speech'
-'og:title': 'Generate Speech API - Maya Research Voice Design'
+'og:title': 'Generate Speech API - Maya Research Maya1'
 'og:description': 'Generate high-quality speech with pre-designed character voices'
 ---
 
@@ -20,7 +20,7 @@ sidebarTitle: 'Generate Speech'
 <ParamField body="voice_id" type="string" required default="Ava">
   The unique identifier of a pre-designed voice from the Get Characters endpoint
   
-  **Available Voices:**
+  **Realistic Voices:**
   - `Ava` - American 20s female
   - `Chloe` - British 20s female
   - `Liam` - British 20s male
@@ -29,6 +29,20 @@ sidebarTitle: 'Generate Speech'
   - `Emma` - American 40s female
   - `Sophie` - British 40s female
   - `Oliver` - British 40s male
+  
+  **Creative Character Voices:**
+  - `AnimatedCartoon` - Animated Cartoon
+  - `Anime` - Anime
+  - `Flirty` - Flirty
+  - `Seductively` - Seductively
+  - `AIMachineVoice` - AI Machine Voice
+  - `Cyborg` - Cyborg
+  - `AlienSciFi` - Alien SciFi
+  - `Pirate` - Pirate
+  - `Gangster` - Gangster
+  - `DarkVillain` - Dark Villain
+  - `Demon` - Demon
+  
 </ParamField>
 
 <ParamField body="text" type="string" required default="Welcome back to another episode of our podcast! Today we're diving into an absolutely fascinating topic that I know you're going to love. We've got some incredible insights to share with you, so let's get started right away.">

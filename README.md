@@ -4,7 +4,7 @@ This repository contains the documentation for Maya Research APIs, built with [M
 
 ## 📚 Documentation Structure
 
-- **VeenaMAX TTS API** - Advanced Text-to-Speech API for Indian languages
+- **Maya1 API** - Generate speech with pre-designed voice characters featuring emotional intelligence
 - **API Reference** - Interactive API playground and endpoints
 - **Getting Started** - Quick start guides and tutorials
 
@@ -57,10 +57,11 @@ mintlify build
 ```
 docs/
 ├── index.mdx                           # Home page
-├── veenamax-tts-api.mdx               # VeenaMAX overview
+├── maya1-api.mdx                      # Maya1 API overview
 ├── api-reference/
 │   ├── endpoint/
-│   │   └── veenamax-generate.mdx      # API endpoint documentation
+│   │   ├── maya1-characters.mdx       # Get Characters endpoint
+│   │   └── maya1-generate.mdx         # Generate Speech endpoint
 │   └── openapi.yaml                   # OpenAPI specification
 ├── docs.json                          # Mintlify configuration
 └── README.md                          # This file
@@ -69,13 +70,13 @@ docs/
 ## 🔗 Important Links
 
 - **Website**: https://mayaresearch.ai
-- **API**: https://api.mayaresearch.ai
+- **API**: https://v3.mayaresearch.ai
 - **Support**: https://mayaresearch.ai
 - **Documentation**: https://mayaresearch.ai
 
 ## 🎨 Customization
 
-- **Colors**: Purple theme (#7C3AED primary)
+- **Colors**: Green theme (#10B981 primary)
 - **Logo**: Place your logo files in `/logo/` directory
 - **Favicon**: Update `/favicon.svg`
 

@@ -35,21 +35,14 @@
             "group": "Getting Started",
             "pages": [
               "index",
-              "veenamax-tts-api",
-              "voice-design-api"
+              "maya1-api"
             ]
           },
           {
-            "group": "VeenaMAX API Reference",
+            "group": "Maya1 API Reference",
             "pages": [
-              "api-reference/endpoint/veenamax-generate"
-            ]
-          },
-          {
-            "group": "Voice Design API Reference",
-            "pages": [
-              "api-reference/endpoint/voice-design-characters",
-              "api-reference/endpoint/voice-design-generate"
+              "api-reference/endpoint/maya1-characters",
+              "api-reference/endpoint/maya1-generate"
             ]
           }
         ]

@@ -1,0 +1,145 @@
+---
+title: 'Maya1 API'
+description: 'Generate speech with pre-designed voice characters featuring natural emotional intelligence'
+icon: 'waveform-lines'
+sidebarTitle: 'Maya1 Overview'
+'og:title': 'Maya1 API - Maya Research'
+'og:description': 'Generate speech with pre-designed voice characters and emotional intelligence'
+---
+
+<Info>
+  Maya1 API enables you to generate emotionally intelligent speech using pre-designed voice characters. Perfect for creating consistent brand voices, characters for games, or personalized voice experiences.
+</Info>
+
+## Overview
+
+The Maya1 API provides high-quality AI speech generation using pre-designed voice characters. Each voice has distinct characteristics optimized for specific use cases.
+
+<CardGroup cols={2}>
+  <Card title="Character Library" icon="users">
+    Access pre-designed voices with distinct personalities
+  </Card>
+  <Card title="Emotional Intelligence" icon="heart">
+    Built-in support for emotional tags and natural expression
+  </Card>
+  <Card title="Streaming Support" icon="bolt">
+    Real-time audio streaming for interactive applications
+  </Card>
+  <Card title="Easy to Use" icon="sparkles">
+    Simple API with consistent, high-quality output
+  </Card>
+</CardGroup>
+
+## Available Voices
+
+**Realistic Voices:**
+- `Ava` - American 20s female
+- `Chloe` - British 20s female
+- `Liam` - British 20s male
+- `Noah` - American 20s male
+- `James` - American 40s male
+- `Emma` - American 40s female
+- `Sophie` - British 40s female
+- `Oliver` - British 40s male
+
+**Creative Character Voices:**
+- `AnimatedCartoon` - Animated Cartoon
+- `Anime` - Anime
+- `Flirty` - Flirty
+- `Seductively` - Seductively
+- `AIMachineVoice` - AI Machine Voice
+- `Cyborg` - Cyborg
+- `AlienSciFi` - Alien SciFi
+- `Pirate` - Pirate
+- `Gangster` - Gangster
+- `DarkVillain` - Dark Villain
+- `Demon` - Demon
+
+<Tip>
+  Use the [Get Characters endpoint](/api-reference/endpoint/maya1-characters) to preview sample audio for each voice.
+</Tip>
+
+## API Reference
+
+### Authentication
+
+<Note>
+  All requests require authentication using an API key in the X-API-Key header.
+</Note>
+
+```
+X-API-Key: maya_YOUR_API_KEY_HERE
+```
+
+### Endpoints
+
+<CardGroup cols={2}>
+  <Card title="Get Characters" icon="list" href="/api-reference/endpoint/maya1-characters">
+    Retrieve the list of available pre-designed voice characters
+  </Card>
+  <Card title="Generate Speech" icon="microphone" href="/api-reference/endpoint/maya1-generate">
+    Generate speech using pre-designed voice characters
+  </Card>
+</CardGroup>
+
+## How It Works
+
+Choose a voice character and generate speech with a simple API call:
+
+```json
+{
+  "voice_id": "Ava",
+  "text": "Welcome back to another episode of our podcast! Today we are diving into an absolutely fascinating topic.",
+  "stream": false
+}
+```
+
+<Note>
+  Browse all available voices using the [Get Characters endpoint](/api-reference/endpoint/maya1-characters) to find the perfect voice for your needs.
+</Note>
+
+## Streaming Options
+
+<Tabs>
+  <Tab title="Streaming (stream: true)">
+    Get audio chunks in real-time as they're generated
+    - Best for interactive applications
+    - Lower latency
+    - Start playback immediately
+  </Tab>
+  
+  <Tab title="Non-Streaming (stream: false)">
+    Receive complete audio file after processing
+    - Best for batch processing
+    - Simpler integration
+    - Complete file for storage
+  </Tab>
+</Tabs>
+
+## Use Cases
+
+<CardGroup cols={3}>
+  <Card title="Podcasts" icon="podcast">
+    Host and guest voices with natural flow
+  </Card>
+  <Card title="Audiobooks" icon="book-open-reader">
+    Character narration with emotional range
+  </Card>
+  <Card title="Gaming" icon="gamepad">
+    Unique character voices
+  </Card>
+  <Card title="Brand Voice" icon="building">
+    Consistent voice across touchpoints
+  </Card>
+  <Card title="E-Learning" icon="graduation-cap">
+    Engaging educational content
+  </Card>
+  <Card title="Customer Service" icon="headset">
+    Automated support voices
+  </Card>
+</CardGroup>
+
+<Tip>
+  **Pro tip:** Select the right voice once and reuse it across your application for consistent brand voice and optimal performance.
+</Tip>
+
