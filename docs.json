@@ -3,9 +3,9 @@
   "theme": "mint",
   "name": "Maya Research Docs",
   "colors": {
-    "primary": "#7C3AED",
-    "light": "#9333EA",
-    "dark": "#6D28D9"
+    "primary": "#10B981",
+    "light": "#34D399",
+    "dark": "#059669"
   },
   "favicon": "/favicon.svg",
   "openapi": "api-reference/openapi.yaml",
